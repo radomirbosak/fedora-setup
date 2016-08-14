@@ -4,9 +4,16 @@
   - name: "set variables"
     set_fact:
       home: "{{ ansible_env.HOME }}"
+
   - name: copy fish functions
     copy: src=fish/functions/ dest={{ home }}/.config/fish/functions
+
   - name: copy fish completions
     copy: src=fish/completions/ dest={{ home }}/.config/fish/completions
+
   - name: install user abbreviations
     script: fish/abbreviations.fish
+
+  - name: change users default shell
+    user: name={{ ansible_ssh_user }} shell=/usr/bin/fish
+    become: yes
