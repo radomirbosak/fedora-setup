@@ -1,0 +1,5 @@
+---
+- hosts: all
+  tasks:
+  - name: install user abbreviations
+    script: fish/abbreviations.fish

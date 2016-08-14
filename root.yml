@@ -1,0 +1,34 @@
+---
+- hosts: all
+  tasks:
+  - name: install packages
+    dnf: state=present name={{ item }}
+    with_items:
+    # tools
+    - python3
+    - python3-ipython
+    - pass
+    - task
+    - fish
+    - vim
+    - htop
+    - gnome-tweak-tool
+    - pandoc
+    - youtube-dl
+    - git
+    # libs
+    - python3-pygments
+    - python3-sphinx
+    - python3-beautifulsoup4
+    # apps
+    - pidgin-otr
+    - pidgin
+    - gnucash
+    - vlc
+    - thunderbird
+    - deluge
+  - name: copy fish functions
+    copy: src=fish/functions/ dest=/usr/share/fish/functions
+  - name: copy fish completions
+    copy: src=fish/completions/ dest=/usr/share/fish/completions
+    
