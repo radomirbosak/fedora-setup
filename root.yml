@@ -24,11 +24,9 @@
     - pidgin-otr
     - pidgin
     - gnucash
-    - vlc
     - thunderbird
     - deluge
   - name: copy fish functions
     copy: src=fish/functions/ dest=/usr/share/fish/functions
   - name: copy fish completions
     copy: src=fish/completions/ dest=/usr/share/fish/completions
-    
