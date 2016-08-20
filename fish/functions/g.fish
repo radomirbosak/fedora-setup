@@ -32,6 +32,19 @@ function g
     case clip
         set -l linkname "$argv[2]"
         readlink "$godir/$linkname" | tr -d '\n' | xsel -b
+    case print
+        set -l linkname "$argv[2]"
+        readlink "$godir/$linkname" | tr -d '\n'
+    case nav
+        set linkname "$argv[2]"
+        set linkpath "$godir/$linkname"
+        if [ -L "$linkpath" ]
+            cd (readlink $linkpath)
+            return 0
+        else
+            echo "Link '$linkname' not found."
+            return 1
+        end
     case '*'
         set linkname "$action"
         set linkpath "$godir/$linkname"
