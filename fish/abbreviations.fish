@@ -1,5 +1,6 @@
 #!/usr/bin/fish
 
+abbr -a gs 'git status'
 abbr -a gd 'git diff'
 abbr -a ga 'git add'
 abbr -a gc 'git commit'
