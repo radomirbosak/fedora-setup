@@ -13,4 +13,10 @@ Usage
 
 ### Local usage
 
-    ansible-playbook  -i "localhost," -c local root.yml -b
+Install main packages:
+
+    ansible-playbook  -i "localhost," -c local root.yml -b --ask-become-pass
+
+Configure fish:
+
+    ansible-playbook  -i "localhost," -c local user.yml --ask-become-pass
