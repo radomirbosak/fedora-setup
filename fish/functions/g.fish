@@ -1,7 +1,7 @@
 function g
     set -l godir "$HOME/.g"
 
-	if [ ! -d $godir ]
+    if [ ! -d $godir ]
         echo "Creating the directory '$godir'."
         mkdir $godir
     end
