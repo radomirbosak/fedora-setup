@@ -2,6 +2,8 @@ fedora-setup
 ============
 My custom fedora setup using ansible.
 
+Currently only installs a bunch of dnf packages and configures fish to be the default shell.
+For fish it installs some commands, completions and abbreviations.
 
 Usage
 -----
