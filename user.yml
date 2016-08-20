@@ -11,8 +11,11 @@
   - name: copy fish completions
     copy: src=fish/completions/ dest={{ home }}/.config/fish/completions
 
+  - name: initialize the g function completion
+    script: /usr/bin/fish -c "g"
+
   - name: install user abbreviations
-    script: fish/abbreviations.fish
+    script: /usr/bin/fish fish/abbreviations.fish
 
   - name: change users default shell
     user: name={{ ansible_ssh_user }} shell=/usr/bin/fish
