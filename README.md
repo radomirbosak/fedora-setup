@@ -8,7 +8,7 @@ Usage
 
 ### Prerequisities for the target machine
 
-    dnf install ansible git python2-dnf libselinux-python
+    dnf install -y ansible git python2-dnf libselinux-python
 
 
 ### Local usage
