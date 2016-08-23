@@ -45,6 +45,15 @@ function g
             echo "Link '$linkname' not found."
             return 1
         end
+    case navrev
+        for line in (ls $godir)
+            set -l link (readlink $godir/$line)
+            if [ "$link" = "$PWD" ]
+                echo $line
+                return 0
+            end
+        end
+        return 1
     case '*'
         set linkname "$action"
         set linkpath "$godir/$linkname"

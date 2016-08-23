@@ -44,15 +44,28 @@ function fish_prompt
     end
   end
 
+  function _go_part
+    type -q g; or return 1
+    set navrev (g navrev); or return 1
+    echo $navrev
+  end
+
   set -l cyan (set_color -o cyan)
   set -l yellow (set_color -o yellow)
   set -l red (set_color -o red)
   set -l blue (set_color -o blue)
+  set -l green (set_color -o green)
   set -l normal (set_color normal)
+
 
   set -l arrow "$red➜ "
   if [ $USER = 'root' ]
     set arrow "$red# "
+  end
+
+  set -l go_part (_go_part)
+  if [ $go_part ]
+    set go_info "$blue [$green$go_part$blue]"
   end
 
   set -l cwd $cyan(basename (prompt_pwd))
@@ -68,5 +81,5 @@ function fish_prompt
     end
   end
 
-  echo -n -s $arrow ' '$cwd $repo_info $normal ' '
+  echo -n -s $arrow ' '$cwd $go_info $repo_info $normal ' '
 end
