@@ -15,10 +15,10 @@ Usage
 
 ### Local usage
 
-Install main packages:
+Install main packages and set fish as default shell:
 
     ansible-playbook  -i "localhost," -c local root.yml -b --ask-become-pass
 
 Configure fish:
 
-    ansible-playbook  -i "localhost," -c local user.yml --ask-become-pass
+    ansible-playbook  -i "localhost," -c local user.yml

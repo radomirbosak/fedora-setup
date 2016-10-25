@@ -16,7 +16,3 @@
 
   - name: install user abbreviations
     script: /usr/bin/fish fish/abbreviations.fish
-
-  - name: change users default shell
-    user: name={{ ansible_ssh_user }} shell=/usr/bin/fish
-    become: yes
