@@ -9,4 +9,5 @@ abbr -a gco 'git checkout'
 
 abbr -a gk 'gitk --all &'
 abbr -a gl 'git log'
+abbr -a glo 'git log --oneline'
 abbr -a gp 'git push'
