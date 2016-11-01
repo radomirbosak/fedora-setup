@@ -17,6 +17,7 @@
     - youtube-dl
     - git
     # libs
+    - python-pygments
     - python3-pygments
     - python3-sphinx
     - python3-beautifulsoup4
