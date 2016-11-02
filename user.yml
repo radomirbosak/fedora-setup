@@ -11,6 +11,9 @@
   - name: copy fish completions
     copy: src=fish/completions/ dest={{ home }}/.config/fish/completions
 
+  - name: copy fish config
+    copy: src=fish/config.fish dest={{ home }}/.config/fish/config.fish
+
   - name: initialize the g function completion
     script: /usr/bin/fish -c "g"
 

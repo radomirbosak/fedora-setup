@@ -97,9 +97,9 @@ function fish_prompt
     end
   end
 
+  set notify_duration 10000
   set -q last_duration
-  if [ $status -eq 0 -a $last_duration -gt 10000 ]
-
+  if [ $status -eq 0 -a "$last_duration" -gt "$notify_duration" ]
     set -g duration_string (set_color 555) "[" (_miliseconds_to_human_readable $last_duration) "] " (set_color normal)
   else
     set -g duration_string ""
