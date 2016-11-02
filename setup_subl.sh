@@ -30,3 +30,6 @@ sudo gtk-update-icon-cache /usr/share/icons/hicolor
 
 # enable icons in gnome
 gsettings set org.gnome.desktop.background show-desktop-icons true
+
+# cleanup
+rm -r sublime_text.tar.bz2 sublime_text_3
