@@ -44,6 +44,22 @@ function fish_prompt
     end
   end
 
+  function _miliseconds_to_human_readable
+    set -l seconds_total (math "$argv[1] / 1000" )
+    set -l hours (math "$seconds_total / 3600")
+    set -l minutes (math "($seconds_total - 3600*$hours) / 60")
+    set -l seconds (math "$seconds_total - 3600*$hours - 60*$minutes")
+
+    if [ $hours -ne 0 ]
+      set result {$hours}h {$minutes}m {$seconds}s
+    else if [ $minutes -ne 0 ]
+      set result {$minutes}m {$seconds}s
+    else
+      set result {$seconds}s
+    end
+    echo "$result"
+  end
+
   function _go_part
     type -q g; or return 1
     set navrev (g navrev); or return 1
@@ -81,5 +97,13 @@ function fish_prompt
     end
   end
 
-  echo -n -s $arrow ' '$cwd $go_info $repo_info $normal ' '
+  set -q last_duration
+  if [ $status -eq 0 -a $last_duration -gt 10000 ]
+
+    set -g duration_string (set_color 555) "[" (_miliseconds_to_human_readable $last_duration) "] " (set_color normal)
+  else
+    set -g duration_string ""
+  end
+
+  echo -n -s $duration_string $arrow ' '$cwd $go_info $repo_info $normal ' '
 end
