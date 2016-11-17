@@ -19,3 +19,6 @@
 
   - name: install user abbreviations
     script: /usr/bin/fish fish/abbreviations.fish
+
+  - name: setup git status to be short globally
+    git_config: name=status.short scope=global value=true
