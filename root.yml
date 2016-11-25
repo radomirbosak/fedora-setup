@@ -16,6 +16,7 @@
     - pandoc
     - youtube-dl
     - git
+    - xsel
     # libs
     - python-pygments
     - python3-pygments
