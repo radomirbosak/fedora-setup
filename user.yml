@@ -22,3 +22,6 @@
 
   - name: setup git status to be short globally
     git_config: name=status.short scope=global value=true
+
+  - name: set vim as default editor for git commit
+    git_config: name=core.editor scope=global value=vim
