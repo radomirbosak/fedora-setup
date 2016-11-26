@@ -4,7 +4,7 @@ function kv
 
     if [ ! -d $kvdir ]
         echo "Creating the directory '$kvdir'."
-        mkdir $godir
+        mkdir $kvdir
     end
 
     set -l argc (count $argv)
