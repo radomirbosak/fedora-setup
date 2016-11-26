@@ -18,6 +18,7 @@
     - git
     - xsel
     - colordiff
+    - mc
     # libs
     - python-pygments
     - python3-pygments
