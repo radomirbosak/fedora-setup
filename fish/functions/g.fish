@@ -21,9 +21,12 @@ function g
         # echo "C create $argv[2]"
         ln -snv (pwd) "$godir/$linkname"
     case list
+        set -l prepare_list ""
         for file in $godir/*
-            echo -s (basename $file) " -> " (readlink $file)
+            set -l row (echo -s (basename $file) ":-> " (readlink $file))
+            set prepare_list "$prepare_list\n$row"
         end
+        echo -e $prepare_list | column -s ":" -o "  " -t
     case back
         cd -
     case rm
