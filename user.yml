@@ -25,3 +25,6 @@
 
   - name: set vim as default editor for git commit
     git_config: name=core.editor scope=global value=vim
+
+  - name: configure the global gitignore file
+    git_config: name=core.excludesfile scope=global value="~/.gitignore"
