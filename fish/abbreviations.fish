@@ -13,6 +13,6 @@ abbr -a gl 'git log'
 abbr -a glo 'git log --oneline'
 abbr -a gla 'git log --graph --oneline --decorate --all'
 abbr -a gp 'git push'
-abbr -a gr 'git remote -v'
+abbr -a grv 'git remote -v'
 
 abbr -a upx 'chmod u+x'
