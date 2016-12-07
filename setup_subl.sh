@@ -21,8 +21,8 @@ for size in $(ls sublime_text_3/Icon); do
 done
 
 # install desktop shortcuts
-cp -v sublime_text_3/sublime_text.desktop Desktop/
-chmod u+x Desktop/sublime_text.desktop
+cp -v sublime_text_3/sublime_text.desktop ~/Desktop/
+chmod u+x ~/Desktop/sublime_text.desktop
 sudo cp -v sublime_text_3/sublime_text.desktop /usr/share/applications/
 
 # update icon cache
