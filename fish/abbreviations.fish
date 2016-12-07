@@ -17,3 +17,4 @@ abbr -a gr 'git remote'
 abbr -a grv 'git remote -v'
 
 abbr -a upx 'chmod u+x'
+abbr -a susy 'sudo systemctl'
