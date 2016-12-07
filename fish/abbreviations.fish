@@ -15,6 +15,7 @@ abbr -a gla 'git log --graph --oneline --decorate --all'
 abbr -a gp 'git push'
 abbr -a gr 'git remote'
 abbr -a grv 'git remote -v'
+abbr -a gg 'git grep -n'
 
 abbr -a upx 'chmod u+x'
 abbr -a susy 'sudo systemctl'
