@@ -19,6 +19,7 @@
     - xsel
     - colordiff
     - mc
+    - meld
     # libs
     - python-pygments
     - python3-pygments
