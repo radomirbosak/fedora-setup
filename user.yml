@@ -33,7 +33,7 @@
       mode: 0600
 
   - name: configure git to use the global gitignore file
-    git_config: name=core.excludesfile scope=global value="~/.gitignore"
+    git_config: name=core.excludesfile scope=global value="{{ home }}/.gitignore"
 
   - name: set meld as the default merge tool
     git_config: name=merge.tool scope=global value=meld
