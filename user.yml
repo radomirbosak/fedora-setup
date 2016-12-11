@@ -26,12 +26,6 @@
   - name: set vim as default editor for git commit
     git_config: name=core.editor scope=global value=vim
 
-  - name: create the .gitignore file
-    file:
-      path: ~/.gitignore
-      state: touch
-      mode: 0600
-
   - name: configure git to use the global gitignore file
     git_config: name=core.excludesfile scope=global value="{{ home }}/.gitignore"
 
@@ -42,6 +36,7 @@
     lineinfile:
       dest: ~/.gitignore
       line: "{{ item }}"
+      create: yes
     with_items:
       - "*.sublime-project"
       - "*.sublime-workspace"
