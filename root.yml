@@ -31,6 +31,7 @@
     - gnucash
     - thunderbird
     - deluge
+    - zeal
   - name: change users default shell
     user: name={{ ansible_ssh_user }} shell=/usr/bin/fish
     become: yes
