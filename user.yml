@@ -40,3 +40,24 @@
     with_items:
       - "*.sublime-project"
       - "*.sublime-workspace"
+
+  - name: set sublime tab_size for python
+    json_edit:
+      file: "{{ home }}/.config/sublime-text-3/Packages/User/Python.sublime-settings"
+      name: tab_size
+      value: 4
+      type: int
+
+  - name: set sublime rulers for python to 79 chars
+    json_edit:
+      file: "{{ home }}/.config/sublime-text-3/Packages/User/Python.sublime-settings"
+      name: rulers
+      value: "[79]"
+      type: json
+
+  - name: set sublime translate_tabs_to_spaces for python to true
+    json_edit:
+      file: "{{ home }}/.config/sublime-text-3/Packages/User/Python.sublime-settings"
+      name: translate_tabs_to_spaces
+      value: true
+      type: bool
