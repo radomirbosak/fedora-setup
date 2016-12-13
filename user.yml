@@ -14,11 +14,29 @@
   - name: copy fish config
     copy: src=fish/config.fish dest={{ home }}/.config/fish/config.fish
 
-  - name: initialize the g function completion
-    script: /usr/bin/fish -c "g"
+  - name: create the links directory for 'g' function
+    file: state=directory path={{ home }}/.g
 
-  - name: install user abbreviations
-    script: /usr/bin/fish fish/abbreviations.fish
+  - name: install fish shell abbreviations
+    fish_abbr: name={{ item.name }} value={{ item.value }}
+    with_items:
+      - { name: 'gs',  value: 'git status'}
+      - { name: 'gd',  value: 'git diff'}
+      - { name: 'gdc', value: 'git diff --cached'}
+      - { name: 'ga',  value: 'git add'}
+      - { name: 'gc',  value: 'git commit'}
+      - { name: 'gp',  value: 'git push'}
+      - { name: 'gco', value: 'git checkout'}
+      - { name: 'gk',  value: 'gitk --all &'}
+      - { name: 'gl',  value: 'git log'}
+      - { name: 'glo', value: 'git log --oneline'}
+      - { name: 'gla', value: 'git log --graph --oneline --decorate --all'}
+      - { name: 'gp',  value: 'git push'}
+      - { name: 'gr',  value: 'git remote'}
+      - { name: 'grv', value: 'git remote -v'}
+      - { name: 'gg',  value: 'git grep -n'}
+      - { name: 'upx', value: 'chmod u+x'}
+      - { name: 'susy', value: 'sudo systemctl'}
 
   - name: setup git status to be short globally
     git_config: name=status.short scope=global value=true
