@@ -37,6 +37,8 @@
       - { name: 'gg',  value: 'git grep -n'}
       - { name: 'upx', value: 'chmod u+x'}
       - { name: 'susy', value: 'sudo systemctl'}
+      - { name: 'i2',  value: 'ipython2'}
+      - { name: 'i',   value: 'ipython3'}
 
   - name: setup git status to be short globally
     git_config: name=status.short scope=global value=true
