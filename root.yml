@@ -22,6 +22,7 @@
     - mc
     - meld
     - docker
+    - docker-fish-completion
     # libs
     - python-pygments
     - python3-pygments
