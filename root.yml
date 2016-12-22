@@ -21,6 +21,7 @@
     - colordiff
     - mc
     - meld
+    - docker
     # libs
     - python-pygments
     - python3-pygments
@@ -37,3 +38,16 @@
   - name: change users default shell
     user: name={{ ansible_ssh_user }} shell=/usr/bin/fish
     become: yes
+  - name: create docker group
+    group:
+      name: docker
+      state: present
+  - name: add user to docker group
+    user:
+      name: "{{ ansible_ssh_user }}"
+      groups: docker
+      append: yes
+  - name: permanently enable docker service
+    service:
+      name: docker
+      enabled: yes
