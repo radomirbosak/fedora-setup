@@ -1,0 +1,21 @@
+---
+fish_abbreviations:
+- { name: 'gs',  value: 'git status'}
+- { name: 'gd',  value: 'git diff'}
+- { name: 'gdc', value: 'git diff --cached'}
+- { name: 'ga',  value: 'git add'}
+- { name: 'gc',  value: 'git commit'}
+- { name: 'gp',  value: 'git push'}
+- { name: 'gco', value: 'git checkout'}
+- { name: 'gk',  value: 'gitk --all &'}
+- { name: 'gl',  value: 'git log'}
+- { name: 'glo', value: 'git log --oneline'}
+- { name: 'gla', value: 'git log --graph --oneline --decorate --all'}
+- { name: 'gp',  value: 'git push'}
+- { name: 'gr',  value: 'git remote'}
+- { name: 'grv', value: 'git remote -v'}
+- { name: 'gg',  value: 'git grep -n'}
+- { name: 'upx', value: 'chmod u+x'}
+- { name: 'susy', value: 'sudo systemctl'}
+- { name: 'i2',  value: 'ipython2'}
+- { name: 'i',   value: 'ipython3'}
