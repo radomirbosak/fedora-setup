@@ -1,11 +1,6 @@
 function g
     set -l godir "$HOME/.g"
 
-    if [ ! -d $godir ]
-        echo "Creating the directory '$godir'."
-        mkdir $godir
-    end
-
     if [ (count $argv) -eq 0 ]
         echo "Usage:"
         echo "g create mydir  # creates a link to this directory under the name 'mydir'"
@@ -15,11 +10,23 @@ function g
 
     set -l action "$argv[1]"
 
+    if [ ! -d $godir ]
+        if test $action = 'create'
+            echo "Creating the directory '$godir'."
+            mkdir $godir
+        else
+            echo "Links directory '$godir' does not exist. Run 'g create' to create the dir."
+            return 1
+        end
+    end
+
+
     switch $action
     case create
-        set -l linkname "$argv[2]"
-        # echo "C create $argv[2]"
-        ln -snv (pwd) "$godir/$linkname"
+        if set -q argv[2]
+            set -l linkname "$argv[2]"
+            ln -snv (pwd) "$godir/$linkname"
+        end
     case list
         set -l prepare_list ""
         for file in $godir/*
