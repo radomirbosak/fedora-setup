@@ -22,3 +22,6 @@ ansible-lint:
 	@echo "Running ansible-lint for main.yml"
 	ansible-lint main.yml -x ANSIBLE0012
 	@echo
+
+clean:
+	rm *.retry
