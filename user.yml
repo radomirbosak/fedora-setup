@@ -7,27 +7,6 @@
     set_fact:
       home: "{{ ansible_env.HOME }}"
 
-  - name: set sublime tab_size for python
-    json_edit:
-      file: "{{ home }}/.config/sublime-text-3/Packages/User/Python.sublime-settings"
-      name: tab_size
-      value: 4
-      type: int
-
-  - name: set sublime rulers for python to 79 chars
-    json_edit:
-      file: "{{ home }}/.config/sublime-text-3/Packages/User/Python.sublime-settings"
-      name: rulers
-      value: "[79]"
-      type: json
-
-  - name: set sublime translate_tabs_to_spaces for python to true
-    json_edit:
-      file: "{{ home }}/.config/sublime-text-3/Packages/User/Python.sublime-settings"
-      name: translate_tabs_to_spaces
-      value: true
-      type: bool
-
 # set gnome shortcuts
   - name: copy the gnome shortcuts dump
     copy: src=files/shortcuts.dconf dest=/tmp/shortcuts.dconf
