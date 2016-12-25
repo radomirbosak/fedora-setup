@@ -1,2 +1,2 @@
 #!/usr/bin/bash
-ansible-playbook -i "localhost," -c local user.yml
+ansible-playbook -i "localhost," -c local main.yml --tags "user"

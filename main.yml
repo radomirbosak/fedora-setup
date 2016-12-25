@@ -1,11 +1,26 @@
 ---
 - hosts: all
   vars_files:
-  - vars/user.yml
-  - vars/root.yml
+  - vars/vars.yml
   roles:
   - fish
   - git
   - sublime_text
   - gnome
   - docker
+  tasks:
+  - name: install CLI packages
+    dnf: state=present name={{ item }}
+    with_items: "{{ cli_packages }}"
+    become: true
+    tags:
+    - root
+    - cli
+
+  - name: install GUI packages
+    dnf: state=present name={{ item }}
+    with_items: "{{ gui_packages }}"
+    become: true
+    tags:
+    - root
+    - gui

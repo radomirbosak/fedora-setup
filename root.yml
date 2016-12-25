@@ -1,8 +1,0 @@
----
-- hosts: all
-  vars_files:
-  - vars/root.yml
-  tasks:
-  - name: install packages
-    dnf: state=present name={{ item }}
-    with_items: "{{ fedora_packages }}"
