@@ -1,0 +1,7 @@
+---
+- include: gnome-user.yml
+  tags: user
+
+- include: gnome-root.yml
+  become: true
+  tags: root

@@ -7,7 +7,6 @@ fedora_packages:
 - task
 - vim
 - htop
-- gnome-tweak-tool
 - pandoc
 - youtube-dl
 - xsel

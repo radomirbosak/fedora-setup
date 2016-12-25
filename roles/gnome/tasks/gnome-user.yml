@@ -1,0 +1,12 @@
+---
+- name: copy the gnome shortcuts dump
+  copy: src=roles/gnome/files/shortcuts.dconf dest=/tmp/shortcuts.dconf
+
+- name: load the dump by dconf
+  shell: dconf load /org/gnome/settings-daemon/plugins/media-keys/ < /tmp/shortcuts.dconf
+
+- name: copy the gnome minimize dump
+  copy: src=roles/gnome/files/minimize.dconf dest=/tmp/minimize.dconf
+
+- name: enable the minimize button on gnome
+  shell: dconf load / < /tmp/minimize.dconf
