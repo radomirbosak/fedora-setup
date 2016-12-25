@@ -1,0 +1,9 @@
+---
+- name: install fish shell
+  dnf: state=present name=fish
+
+- name: install docker-fish-completion
+  dnf: name=docker-fish-completion
+
+- name: change users default shell
+  user: name={{ ansible_ssh_user }} shell=/usr/bin/fish

@@ -5,7 +5,6 @@ fedora_packages:
 - python3-ipython
 - pass
 - task
-- fish
 - vim
 - htop
 - gnome-tweak-tool
@@ -18,7 +17,6 @@ fedora_packages:
 - mc
 - meld
 - docker
-- docker-fish-completion
 # libs
 - python-pygments
 - python3-pygments

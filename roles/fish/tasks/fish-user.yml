@@ -1,0 +1,16 @@
+---
+- name: copy fish functions
+  copy: src=roles/fish/files/functions/ dest={{ ansible_env.HOME }}/.config/fish/functions
+
+- name: copy fish completions
+  copy: src=roles/fish/files/completions/ dest={{ ansible_env.HOME }}/.config/fish/completions
+
+- name: copy fish config
+  copy: src=roles/fish/files/config.fish dest={{ ansible_env.HOME }}/.config/fish/config.fish
+
+- name: create the links directory for 'g' function
+  file: state=directory path={{ ansible_env.HOME }}/.g
+
+- name: install fish shell abbreviations
+  fish_abbr: name={{ item.name }} value={{ item.value }}
+  with_items: "{{ fish_abbreviations }}"

@@ -1,0 +1,7 @@
+---
+- include: fish-user.yml
+  tags: user
+
+- include: fish-root.yml
+  tags: root
+  become: true

@@ -7,22 +7,6 @@
     set_fact:
       home: "{{ ansible_env.HOME }}"
 
-  - name: copy fish functions
-    copy: src=fish/functions/ dest={{ home }}/.config/fish/functions
-
-  - name: copy fish completions
-    copy: src=fish/completions/ dest={{ home }}/.config/fish/completions
-
-  - name: copy fish config
-    copy: src=fish/config.fish dest={{ home }}/.config/fish/config.fish
-
-  - name: create the links directory for 'g' function
-    file: state=directory path={{ home }}/.g
-
-  - name: install fish shell abbreviations
-    fish_abbr: name={{ item.name }} value={{ item.value }}
-    with_items: "{{ fish_abbreviations }}"
-
   - name: setup git status to be short globally
     git_config: name=status.short scope=global value=true
 
