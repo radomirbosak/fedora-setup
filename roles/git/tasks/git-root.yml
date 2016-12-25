@@ -1,0 +1,8 @@
+---
+- name: install git and friends
+  dnf: name={{ item }}
+  with_items:
+  - git
+  - gitk
+  - colordiff
+  - meld

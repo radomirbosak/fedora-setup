@@ -10,12 +10,8 @@ fedora_packages:
 - gnome-tweak-tool
 - pandoc
 - youtube-dl
-- git
-- gitk
 - xsel
-- colordiff
 - mc
-- meld
 - docker
 # libs
 - python-pygments

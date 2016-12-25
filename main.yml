@@ -5,3 +5,4 @@
   - vars/root.yml
   roles:
   - fish
+  - git

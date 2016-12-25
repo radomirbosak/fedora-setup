@@ -7,27 +7,6 @@
     set_fact:
       home: "{{ ansible_env.HOME }}"
 
-  - name: setup git status to be short globally
-    git_config: name=status.short scope=global value=true
-
-  - name: set vim as default editor for git commit
-    git_config: name=core.editor scope=global value=vim
-
-  - name: configure git to use the global gitignore file
-    git_config: name=core.excludesfile scope=global value="{{ home }}/.gitignore"
-
-  - name: set meld as the default merge tool
-    git_config: name=merge.tool scope=global value=meld
-
-  - name: ensure .sublime-project and .sublime-workspace files are ignored globally by git
-    lineinfile:
-      dest: ~/.gitignore
-      line: "{{ item }}"
-      create: yes
-    with_items:
-      - "*.sublime-project"
-      - "*.sublime-workspace"
-
   - name: set sublime tab_size for python
     json_edit:
       file: "{{ home }}/.config/sublime-text-3/Packages/User/Python.sublime-settings"
