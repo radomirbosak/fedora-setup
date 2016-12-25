@@ -1,0 +1,15 @@
+---
+- name: create .bashrc.d directory
+  file:
+    path: "{{ ansible_env.HOME }}/.bashrc.d"
+    state: directory
+
+- name: copy the file with aliases
+  copy:
+    src: files/ansible-aliases.sh
+    dest: "{{ ansible_env.HOME }}/.bashrc.d/"
+
+- name: ensure the all files in .bashrc.d get sourced
+  lineinfile:
+    dest: "{{ ansible_env.HOME }}/.bashrc"
+    line: "for f in ~/.bashrc.d/*; do source $f; done"

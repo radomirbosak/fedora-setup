@@ -3,6 +3,7 @@ fedora-setup
 My custom fedora setup using ansible.
 
 Currently it installs and configures fish shell, git, sublime_text, docker. Sets gnome keyboard shortcuts and enables the minimize button.
+Also various packages are installed.
 
 Usage
 -----

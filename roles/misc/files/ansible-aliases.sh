@@ -1,0 +1,5 @@
+alias l="ls -a --color=auto"
+alias ll="ls -lahv --time-style=long-iso --color=auto"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
