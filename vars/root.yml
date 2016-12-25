@@ -11,7 +11,6 @@ fedora_packages:
 - youtube-dl
 - xsel
 - mc
-- docker
 # libs
 - python-pygments
 - python3-pygments

@@ -1,0 +1,19 @@
+---
+- name: create docker group
+  group:
+    name: docker
+    state: present
+  tags: root
+
+- name: add user to docker group
+  user:
+    name: "{{ ansible_ssh_user }}"
+    groups: docker
+    append: yes
+  tags: root
+
+- name: permanently enable docker service
+  service:
+    name: docker
+    enabled: yes
+  tags: root
