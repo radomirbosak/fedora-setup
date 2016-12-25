@@ -2,8 +2,7 @@ fedora-setup
 ============
 My custom fedora setup using ansible.
 
-Currently only installs a bunch of dnf packages and configures fish to be the default shell.
-For fish it installs some commands, completions and abbreviations.
+Currently it installs and configures fish shell, git, sublime_text, docker. Sets gnome keyboard shortcuts and enables the minimize button.
 
 Usage
 -----
@@ -14,11 +13,14 @@ Usage
 
 
 ### Local usage
+These scripts serve as convenient shortcut which just run ansible with different parameters.
 
-Install main packages and set fish as default shell:
+Perform tasks requiring root privileges (mainly installing packages):
+```console
+$ ./deploy-local-root.sh
+```
 
-    ansible-playbook  -i "localhost," -c local root.yml -b --ask-become-pass
-
-Configure fish:
-
-    ansible-playbook  -i "localhost," -c local user.yml
+Perform tasks doable by user:
+```console
+$ ./deploy-local-user.sh
+```

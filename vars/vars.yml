@@ -19,3 +19,31 @@ fish_abbreviations:
 - { name: 'susy', value: 'sudo systemctl'}
 - { name: 'i2',  value: 'ipython2'}
 - { name: 'i',   value: 'ipython3'}
+
+cli_packages:
+# tools
+- python3
+- python3-ipython
+- pass
+- task
+- vim
+- htop
+- pandoc
+- youtube-dl
+- xsel
+- mc
+# libs
+- python-pygments
+- python3-pygments
+- python3-sphinx
+- python3-beautifulsoup4
+# apps
+
+gui_packages:
+- pidgin-otr
+- pidgin
+- gnucash
+- thunderbird
+- deluge
+- zeal
+- gimp
