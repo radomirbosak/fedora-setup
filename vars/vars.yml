@@ -43,6 +43,7 @@ gui_packages:
 - pidgin-otr
 - pidgin
 - gnucash
+- libdbi-dbd-sqlite  # required by gnucash sqli backend
 - thunderbird
 - deluge
 - zeal
