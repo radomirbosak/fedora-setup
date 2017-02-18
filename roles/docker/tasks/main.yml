@@ -4,6 +4,7 @@
     name: docker
     state: present
   tags: root
+  become: true
 
 - name: add user to docker group
   user:
@@ -11,9 +12,11 @@
     groups: docker
     append: yes
   tags: root
+  become: true
 
 - name: permanently enable docker service
   service:
     name: docker
     enabled: yes
   tags: root
+  become: true
