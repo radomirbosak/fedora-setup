@@ -11,6 +11,7 @@ fish_abbreviations:
 - { name: 'gl',  value: 'git log'}
 - { name: 'glo', value: 'git log --oneline'}
 - { name: 'gla', value: 'git log --graph --oneline --decorate --all'}
+- { name: 'glh', value: 'git log --oneline ORIG_HEAD..HEAD'}
 - { name: 'gp',  value: 'git push'}
 - { name: 'gr',  value: 'git remote'}
 - { name: 'grv', value: 'git remote -v'}
