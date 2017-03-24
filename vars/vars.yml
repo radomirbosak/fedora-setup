@@ -20,6 +20,7 @@ fish_abbreviations:
 - { name: 'susy', value: 'sudo systemctl'}
 - { name: 'i2',  value: 'ipython2'}
 - { name: 'i',   value: 'ipython3'}
+- { name: 'act', value: 'source .*/bin/activate.fish'}
 
 cli_packages:
 # tools
