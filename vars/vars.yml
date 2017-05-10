@@ -16,6 +16,7 @@ fish_abbreviations:
 - { name: 'gr',  value: 'git remote'}
 - { name: 'grv', value: 'git remote -v'}
 - { name: 'gg',  value: 'git grep -n'}
+- { name: 'gpf', value: 'git pull --ff-only'}
 - { name: 'upx', value: 'chmod u+x'}
 - { name: 'susy', value: 'sudo systemctl'}
 - { name: 'i2',  value: 'ipython2'}
