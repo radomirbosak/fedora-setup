@@ -2,7 +2,6 @@
 - name: install CLI packages
   dnf: state=present name={{ item }}
   with_items: "{{ cli_packages }}"
-  become: true
   tags:
   - root
   - cli
@@ -10,7 +9,22 @@
 - name: install GUI packages
   dnf: state=present name={{ item }}
   with_items: "{{ gui_packages }}"
-  become: true
   tags:
   - root
   - gui
+
+- name: mount /var/log as tmpfs
+  mount:
+    path: /var/log
+    src: none
+    fstype: tmpfs
+    state: mounted
+    opts: size=10%
+
+- name: mount /var/log as tmpfs
+  mount:
+    path: "{{ ansible_env.HOME }}/.cache"
+    src: none
+    fstype: tmpfs
+    state: mounted
+    opts: size=4G,user,noauto

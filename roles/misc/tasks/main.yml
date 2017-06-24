@@ -1,6 +1,7 @@
 ---
 - include: misc-root.yml
   tags: root
+  become: true
 
 - include: misc-user.yml
   tags: user
