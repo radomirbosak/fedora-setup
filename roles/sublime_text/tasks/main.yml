@@ -1,3 +1,7 @@
 ---
 - include: subl-user.yml
   tags: user
+
+- include: subl-root.yml
+  tags: root
+  become: true

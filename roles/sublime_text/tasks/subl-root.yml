@@ -1,0 +1,23 @@
+---
+- name: Add sublime_text gpg key
+  rpm_key:
+    state: present
+    key: https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+
+- name: Add sublime repo
+  yum_repository:
+    name: sublime
+    description: Sublime Text - x86_64 - Stable
+    baseurl: https://download.sublimetext.com/rpm/stable/x86_64
+    gpgkey: https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+    gpgcheck: yes
+
+- name: install sublime
+  dnf:
+    name: sublime-text
+    state: present
+
+# sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+# sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+# sudo dnf install sublime-text
+
