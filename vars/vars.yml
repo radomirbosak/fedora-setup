@@ -23,6 +23,7 @@ fish_abbreviations:
 - { name: 'i2',  value: 'ipython2'}
 - { name: 'i',   value: 'ipython3'}
 - { name: 'act', value: 'source .\*/bin/activate.fish'}
+- { name: 'etc', value: 'sudo git -C /etc'}
 
 cli_packages:
 # tools
