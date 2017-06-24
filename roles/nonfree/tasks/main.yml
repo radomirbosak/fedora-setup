@@ -1,0 +1,7 @@
+---
+- include: nonfree-user.yml
+  tags: user
+
+- include: nonfree-root.yml
+  tags: root
+  become: true
