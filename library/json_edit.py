@@ -2,6 +2,7 @@
 
 import re
 import json
+import errno
 from subprocess import PIPE, check_output
 
 from ansible.module_utils.basic import AnsibleModule
@@ -75,7 +76,12 @@ def add_key(json_dict, vartype, name, value, check_mode=False):
 
 
 def read_dict(filename):
-    file_cont = open(filename, 'r').read()
+    try:
+        file_cont = open(filename, 'r').read()
+    except (OSError, IOError) as e: # FileNotFoundError does not exist on Python < 3.3
+        if getattr(e, 'errno', 0) == errno.ENOENT:
+            return {}
+
     file_cont = re.sub('//.*\n', '', file_cont)
     return json.loads(file_cont)
 
