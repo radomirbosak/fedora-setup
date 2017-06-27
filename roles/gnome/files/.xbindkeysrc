@@ -37,19 +37,22 @@
 #keystate_capslock = enable
 #keystate_scrolllock= enable
 
-"gnome-terminal"
+"wmctrl -a Firefox || firefox"
 F1
 
-"wmctrl -a Firefox || firefox"
+"wmctrl -a 'Gmail - Mozilla Firefox' || (firefox -new-window https://mail.google.com/ && sleep 3 && wmctrl -a 'Gmail - Mozilla Firefox')"
 F2
 
-"subl"
+"wmctrl -a 'Stable Terminal' || gnome-terminal --window-with-profile=stable-terminal"
 F3
 
-"spotify"
+"subl"
 F4
 
-"gnome-control-center screen"
+"wmctrl -a Spotify || spotify"
+F6
+
+"gnome-terminal"
 F7
 
 "gnome-terminal -- ipython3 --no-confirm-exit --no-banner"
