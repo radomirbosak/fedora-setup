@@ -10,3 +10,6 @@
 
 - name: enable the minimize button on gnome
   shell: dconf load / < /tmp/minimize.dconf
+
+- name: copy the xbindkeys config
+  copy: src=roles/gnome/files/.xbindkeysrc dest={{ ansible_env.HOME }}/.xbindkeysrc
