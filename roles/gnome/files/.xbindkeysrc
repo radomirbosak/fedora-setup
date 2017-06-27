@@ -55,6 +55,9 @@ F7
 "gnome-terminal -- ipython3 --no-confirm-exit"
 F12
 
+"gnome-terminal"
+Control + Mod1 + T
+
 ##################################
 # End of xbindkeys configuration #
 ##################################

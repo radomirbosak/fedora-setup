@@ -1,10 +1,4 @@
 ---
-- name: copy the gnome shortcuts dump
-  copy: src=roles/gnome/files/shortcuts.dconf dest=/tmp/shortcuts.dconf
-
-- name: load the dump by dconf
-  shell: dconf load /org/gnome/settings-daemon/plugins/media-keys/ < /tmp/shortcuts.dconf
-
 - name: copy the xbindkeys config
   copy: src=roles/gnome/files/.xbindkeysrc dest={{ ansible_env.HOME }}/.xbindkeysrc
 
