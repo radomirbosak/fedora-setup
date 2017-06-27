@@ -52,7 +52,7 @@ F4
 "gnome-control-center screen"
 F7
 
-"gnome-terminal -- ipython3 --no-confirm-exit"
+"gnome-terminal -- ipython3 --no-confirm-exit --no-banner"
 F12
 
 "gnome-terminal"
