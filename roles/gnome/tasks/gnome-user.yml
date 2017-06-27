@@ -2,6 +2,9 @@
 - name: copy the xbindkeys config
   copy: src=roles/gnome/files/.xbindkeysrc dest={{ ansible_env.HOME }}/.xbindkeysrc
 
+- name: enable xbindkeys permanently
+  copy: src=roles/gnome/files/xbindkeys.desktop dest={{ ansible_env.HOME }}/.config/autostart/
+
 - name: Add minimize button to windows
   gsetting:
     schema: "org.gnome.desktop.wm.preferences"

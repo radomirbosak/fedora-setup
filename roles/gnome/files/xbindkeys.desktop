@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=xbindkeys
+GenericName=xbindkeys
+Comment=Mapping keys to shortcuts
+Exec=/usr/bin/xbindkeys
+Terminal=False
+Type=Application
+X-GNOME-Autostart-enabled=true
