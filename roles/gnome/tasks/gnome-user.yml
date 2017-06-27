@@ -5,11 +5,11 @@
 - name: load the dump by dconf
   shell: dconf load /org/gnome/settings-daemon/plugins/media-keys/ < /tmp/shortcuts.dconf
 
-- name: copy the gnome minimize dump
-  copy: src=roles/gnome/files/minimize.dconf dest=/tmp/minimize.dconf
-
-- name: enable the minimize button on gnome
-  shell: dconf load / < /tmp/minimize.dconf
-
 - name: copy the xbindkeys config
   copy: src=roles/gnome/files/.xbindkeysrc dest={{ ansible_env.HOME }}/.xbindkeysrc
+
+- name: Add minimize button to windows
+  gsetting:
+    schema: "org.gnome.desktop.wm.preferences"
+    key: "button-layout"
+    value: "'appmenu:minimize,close'"
