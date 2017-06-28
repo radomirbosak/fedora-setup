@@ -49,7 +49,9 @@ F3
 "subl"
 F4
 
-"wmctrl -a Spotify || spotify"
+# -x will make wmctrl search for WM_CLASS instead of Window Title
+# use xprop to get window attributes
+"wmctrl -a -x -r Spotify || spotify"
 F6
 
 "gnome-terminal"
