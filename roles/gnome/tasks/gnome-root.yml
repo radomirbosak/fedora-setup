@@ -2,5 +2,8 @@
 - name: install gnome-tweak-tool
   dnf: name=gnome-tweak-tool
 
-- name: install xbindkeys
-  dnf: name=xbindkeys
+- name: install xbindkeys dependencies
+  dnf: name="{{ item }}"
+  with_items:
+  - xbindkeys
+  - wmctrl
