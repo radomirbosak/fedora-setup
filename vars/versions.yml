@@ -1,0 +1,2 @@
+---
+fedora_current: "{{ ansible_distribution_version }}"

@@ -2,6 +2,7 @@
 - hosts: all
   vars_files:
   - vars/vars.yml
+  - vars/versions.yml
   roles:
   - fish
   - git
@@ -9,3 +10,4 @@
   - gnome
   - docker
   - misc
+  - nonfree
