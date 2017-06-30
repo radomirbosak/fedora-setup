@@ -10,3 +10,11 @@
     schema: "org.gnome.desktop.wm.preferences"
     key: "button-layout"
     value: "'appmenu:minimize,close'"
+
+
+gsettings set org.gnome.desktop.interface clock-show-date true
+
+- name: Show date in top bar
+  gsetting:
+    schema: "org.gnome.desktop.interface"
+    key: clock-show-date true
