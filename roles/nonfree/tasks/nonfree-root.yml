@@ -26,9 +26,11 @@
 
 - name: Install ffmpeg and gstreamer-plugins-*
   dnf: name={{ item }}
-       steam=present
+       state=present
   with_items:
     - ffmpeg
     - gstreamer-plugins-good
     - gstreamer-plugins-bad
     - gstreamer-plugins-ugly
+    - gstreamer1-libav
+    - x264
