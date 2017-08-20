@@ -47,6 +47,7 @@ cli_packages:
 gui_packages:
 - pidgin-otr
 - pidgin
+- purple-matrix
 - gnucash
 - libdbi-dbd-sqlite  # required by gnucash sqli backend
 - thunderbird
